@@ -1,0 +1,227 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+/*---------------------- project notemaking---------------------- */
+body,#root{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 100%;
+
+}
+
+.main-div .notes-div{
+  /* padding: 1.2rem; */
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 1.68rem;
+  /* margin:2.7rem; */
+} 
+
+.main-div .notes-div .addanote button{
+  /* margin-bottom: 2.2rem; */
+  margin-bottom: 1.37rem;
+  /* margin-left: 47px; */
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 10rem;
+  height:3rem;
+  font-size: 1.35rem;
+    font-weight: 700;
+    /* color: white; */
+}
+.main-div .notes-div .addanote button::before{
+  
+  content: "";
+  position: absolute;
+  top: 2.55rem;
+  left: 3.5rem;
+  /* top: 3.55rem;
+  left: 4.75rem; */
+  width: 8rem;
+  height: 3rem;
+  background-color:black;
+  z-index: -1;
+  transition:transform 0.5s ;
+  transform-origin: bottom right;
+  transform: scale(0);
+  
+}
+.main-div .notes-div .addanote button:hover{
+  color:white
+}
+.main-div .notes-div .addanote button:hover::before{
+  /* color: #333; */
+  transition: transform 0.5s ;
+  transform-origin: top left;
+  transform: scale(1);
+  
+}
+.main-div .notes-div .addanote button::after{
+  content: "";
+  position: absolute;
+  top: 2.55rem;
+  left: 3.5rem;
+  width: 8rem;
+  height: 3rem;
+  background-color: transparent;
+  border: .12rem solid black;
+  box-sizing: border-box;
+  z-index: -1;
+  transition:transform 0.5s ;
+  transform-origin: top left;
+  transform: scale(1);
+}
+.main-div .notes-div .addanote button:hover::after{
+  transition:transform 0.5s ;
+  transform-origin: bottom right;
+  transform: scale(0);
+}
+
+
+.main-div .notes-div .notelist{
+  /* display: grid; */
+  grid-gap: 2rem;
+  /* grid-template-columns: repeat(4,20.5rem); */
+ display: flex;
+  flex-wrap: wrap;
+}
+.notes-body{
+  background-color:#e599f7;
+  border-radius: 3.12rem;
+  padding: 1.06rem;
+  height:15rem;
+  width:18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.notes-body .title input{
+  border:none;
+  background: none;
+  outline: none;
+  font-size:1rem;
+  font-style: italic;
+}
+.notes-body .message textarea{
+  border:none;
+  resize: none;
+  background: none;
+  outline: none;
+  font-size: 1.56rem;
+  font-style: italic;
+  height: 9.3rem; width: 20rem;
+}
+.notes-body .footer{
+display: flex;
+flex-direction:row-reverse;
+
+}
+.notes-body .footer .save-div .save{
+  border-radius:0.93rem;
+padding:.3rem .6rem;
+cursor:pointer;
+border: none;
+outline: none;
+background: none;
+}
+.notes-body .footer .delete-icon,.edit-icon{
+  margin:0 .75rem;
+  float: right;
+  cursor: pointer;
+/* display: none; */
+}
+.delete-icon:hover,.edit-icon:hover,.save:hover{
+  transform: scale(1.5,1.5);
+}
+.add {
+  background-color:#e599f7;
+  padding: 1.06rem;
+  height:15rem;
+  width:20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.add .newnotehead .title input{
+  border:none;
+  background: none;
+  outline: none;
+  font-size: 1.56rem;
+  font-style: italic;
+}
+.add .newnotehead .message textarea{
+  border:none;
+  resize: none;
+  background: none;
+  outline: none;
+  font-size: 1.06rem;
+  font-style: italic;
+  height: 9.3rem; width:20rem;
+}
+.add .newnotefooter .save-div{
+  float: right;
+
+}
+.save{
+  background: none;
+  outline: none;
+  border: none;
+}
+
+
+/* responsive */
+@media(max-width:768px){
+  html{
+    font-size:88%;
+  }
+  .main-div .notes-div .notelist{
+    justify-content: space-evenly;
+  }
+}
+
+@media(max-width:425px){
+  html{
+    font-size:55%;
+  }
+  .main-div .notes-div{
+    padding: 2.75rem;
+    margin: -0.32rem;
+  }
+  
+.notes-body {
+  
+  padding: 6.06rem;
+  
+}
+.notes-body .notehead{
+  position: relative;
+    top: -6rem;
+    left: -4rem;
+    font-size: 2rem;
+}
+.notes-body .footer{
+  position: relative;
+    bottom: -5rem;
+    right: -5rem;
+    font-size: 1.67rem;
+}
+}
